@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Answer resource:
+
+  # CREATE
+  post("/insert_answer", { :controller => "answers", :action => "create" })
+          
+  # READ
+  get("/answers", { :controller => "answers", :action => "index" })
+  
+  get("/answers/:path_id", { :controller => "answers", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_answer/:path_id", { :controller => "answers", :action => "update" })
+  
+  # DELETE
+  get("/delete_answer/:path_id", { :controller => "answers", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Courselist resource:
 
   # CREATE

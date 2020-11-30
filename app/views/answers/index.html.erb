@@ -1,0 +1,156 @@
+<div>
+  <div>
+    <h1>
+      List of all answers
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new answer
+    </h2>
+
+    <form action="/insert_answer" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <input type="checkbox" id="proactive_box" name="query_proactive" value="1">
+
+        <label for="proactive_box">Proactive</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="tasking_box" name="query_tasking" value="1">
+
+        <label for="tasking_box">Tasking</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="claim_box" name="query_claim" value="1">
+
+        <label for="claim_box">Claim</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="assessment_box" name="query_assessment" value="1">
+
+        <label for="assessment_box">Assessment</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="collection_box" name="query_collection" value="1">
+
+        <label for="collection_box">Collection</label>
+      </div>
+
+      <button>
+        Create answer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Proactive
+        </th>
+
+        <th>
+          Tasking
+        </th>
+
+        <th>
+          Claim
+        </th>
+
+        <th>
+          Assessment
+        </th>
+
+        <th>
+          Collection
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_answers.each do |an_answer| %>
+      <tr>
+        <td>
+          <%= an_answer.id %>
+        </td>
+
+        <td>
+          <%= an_answer.user_id %>
+        </td>
+
+        <td>
+          <%= an_answer.proactive %>
+        </td>
+
+        <td>
+          <%= an_answer.tasking %>
+        </td>
+
+        <td>
+          <%= an_answer.claim %>
+        </td>
+
+        <td>
+          <%= an_answer.assessment %>
+        </td>
+
+        <td>
+          <%= an_answer.collection %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_answer.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_answer.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/answers/<%= an_answer.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

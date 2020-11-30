@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Answer #<%= @the_answer.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/answers">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_answer/<%= @the_answer.id %>">
+          Delete answer
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_answer.user_id %>
+      </dd>
+
+      <dt>
+        Proactive
+      </dt>
+      <dd>
+        <%= @the_answer.proactive %>
+      </dd>
+
+      <dt>
+        Tasking
+      </dt>
+      <dd>
+        <%= @the_answer.tasking %>
+      </dd>
+
+      <dt>
+        Claim
+      </dt>
+      <dd>
+        <%= @the_answer.claim %>
+      </dd>
+
+      <dt>
+        Assessment
+      </dt>
+      <dd>
+        <%= @the_answer.assessment %>
+      </dd>
+
+      <dt>
+        Collection
+      </dt>
+      <dd>
+        <%= @the_answer.collection %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_answer.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_answer.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit answer
+    </h2>
+
+    <form action="/modify_answer/<%= @the_answer.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_answer.user_id %>">
+      </div>
+
+      <div>
+        <input type="checkbox" id="proactive_box" name="query_proactive" value="1" <%= "checked" if @the_answer.proactive %>>
+
+        <label for="proactive_box">
+            Proactive
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="tasking_box" name="query_tasking" value="1" <%= "checked" if @the_answer.tasking %>>
+
+        <label for="tasking_box">
+            Tasking
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="claim_box" name="query_claim" value="1" <%= "checked" if @the_answer.claim %>>
+
+        <label for="claim_box">
+            Claim
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="assessment_box" name="query_assessment" value="1" <%= "checked" if @the_answer.assessment %>>
+
+        <label for="assessment_box">
+            Assessment
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="collection_box" name="query_collection" value="1" <%= "checked" if @the_answer.collection %>>
+
+        <label for="collection_box">
+            Collection
+        </label>
+      </div>
+
+      <button>
+        Update answer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
