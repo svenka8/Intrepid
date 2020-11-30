@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Grouplist #<%= @the_grouplist.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/grouplists">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_grouplist/<%= @the_grouplist.id %>">
+          Delete grouplist
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_grouplist.user_id %>
+      </dd>
+
+      <dt>
+        Group
+      </dt>
+      <dd>
+        <%= @the_grouplist.group_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_grouplist.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_grouplist.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit grouplist
+    </h2>
+
+    <form action="/modify_grouplist/<%= @the_grouplist.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_grouplist.user_id %>">
+      </div>
+
+      <div>
+        <label for="group_id_box">
+          Group
+        </label>
+
+        <input type="text" id="group_id_box" name="query_group_id" value="<%= @the_grouplist.group_id %>">
+      </div>
+
+      <button>
+        Update grouplist
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
