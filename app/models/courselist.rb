@@ -9,4 +9,11 @@
 #  user_id    :integer
 #
 class Courselist < ApplicationRecord
+  #direct
+  belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id" })
+
+  belongs_to(:course, { :required => false, :class_name => "Course", :foreign_key => "course_id" })
+
+  
+
 end
