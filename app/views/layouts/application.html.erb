@@ -16,19 +16,31 @@
   </head>
   <body>
     <%= yield %>
+
     <ul>
+      <li>
+        <%=@current_user.inspect%>
+      </li>
+    <% if @current_user==nil%>
+
         <li>
-        <a href="/">Home</a>
+        <a href="/user_sign_in">Sign in</a>
+        </li>
+        <li>
+        <a href="/user_sign_up">Sign up!!!</a>
+        </li>
+
+        <%else%>
+        <li>
+        <a href="/user_sign_out">Sign out</a>
         </li>
         <li>
         <a href="/courselists">Courselists</a>
         </li>
-         <li>
-        <a href="/user_sign_in">Sign In</a>
+        <li>
+        <a href="/edit_user_profile">Edit <%=@current_user.first_name%>'s profile</a>
         </li>
-       <li>
-        <a href="/user_sign_up">Sign up!!!</a>
-        </li>
-      </ul>
+         <%end%>
+
   </body>
 </html>
