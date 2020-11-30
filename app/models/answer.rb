@@ -13,4 +13,6 @@
 #  user_id    :integer
 #
 class Answer < ApplicationRecord
+  #direct
+  belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id" })
 end
