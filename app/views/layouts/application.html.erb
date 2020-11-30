@@ -15,8 +15,17 @@
 
   </head>
   <body>
+  <div>
+      <% if notice.present?%> 
+       <div style="border: thin green solid; color:green">
+       <%=notice%>
+      <%end%>
+       <% if alert.present?%> 
+      <div style="border: thin red solid; color:red">
+        <%=alert%>
+        <%end%>
     <%= yield %>
-
+</div>
     <ul>
       <li>
         <%=@current_user.inspect%>
@@ -35,7 +44,7 @@
         <a href="/user_sign_out">Sign out</a>
         </li>
         <li>
-        <a href="/courselists">Courselists</a>
+        <a href="/">Evaluate Training Needs</a>
         </li>
         <li>
         <a href="/edit_user_profile">Edit <%=@current_user.first_name%>'s profile</a>

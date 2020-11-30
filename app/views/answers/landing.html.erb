@@ -4,3 +4,16 @@
 
 <h2>Where are you in the analytical process?</h2>
 
+      <div>
+        <label for="movie_id_box">
+          Movie
+        </label>
+      <select id="movie_id_box" name="query_movie_id">
+      <%Course.all.order({:course_name=> :asc}).each do |crse|%>
+      <option value="<%=crse.id%>">
+        <%=crse.url%>
+        <%end%>
+      </option>
+      </select>
+        <%# <input type="text" id="movie_id_box" name="query_movie_id"> %>
+      </div>
