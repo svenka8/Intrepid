@@ -1,4 +1,10 @@
 class AnswersController < ApplicationController
+  def landing
+    render({ :template => "answers/landing.html.erb" })
+  end
+
+  
+  
   def index
     matching_answers = Answer.all
 
