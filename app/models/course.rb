@@ -9,4 +9,9 @@
 #  updated_at  :datetime         not null
 #
 class Course < ApplicationRecord
+  #direct
+  has_many(:courselists, { :class_name => "Courselist", :foreign_key => "course_id", :dependent => :destroy })
+
+  #indirect
+  has_many(:users, { :through => :courselists, :source => :user })
 end
