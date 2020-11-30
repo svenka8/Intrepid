@@ -1,0 +1,102 @@
+<div>
+  <div>
+    <h1>
+      List of all courselists
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new courselist
+    </h2>
+
+    <form action="/insert_courselist" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="course_id_box">
+          Course
+        </label>
+
+        <input type="text" id="course_id_box" name="query_course_id">
+      </div>
+
+      <button>
+        Create courselist
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Course
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_courselists.each do |a_courselist| %>
+      <tr>
+        <td>
+          <%= a_courselist.id %>
+        </td>
+
+        <td>
+          <%= a_courselist.user_id %>
+        </td>
+
+        <td>
+          <%= a_courselist.course_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_courselist.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_courselist.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/courselists/<%= a_courselist.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

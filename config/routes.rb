@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Courselist resource:
+
+  # CREATE
+  post("/insert_courselist", { :controller => "courselists", :action => "create" })
+          
+  # READ
+  get("/courselists", { :controller => "courselists", :action => "index" })
+  
+  get("/courselists/:path_id", { :controller => "courselists", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_courselist/:path_id", { :controller => "courselists", :action => "update" })
+  
+  # DELETE
+  get("/delete_courselist/:path_id", { :controller => "courselists", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Grouplist resource:
 
   # CREATE

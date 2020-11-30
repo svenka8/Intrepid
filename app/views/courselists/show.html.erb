@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Courselist #<%= @the_courselist.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/courselists">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_courselist/<%= @the_courselist.id %>">
+          Delete courselist
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_courselist.user_id %>
+      </dd>
+
+      <dt>
+        Course
+      </dt>
+      <dd>
+        <%= @the_courselist.course_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_courselist.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_courselist.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit courselist
+    </h2>
+
+    <form action="/modify_courselist/<%= @the_courselist.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_courselist.user_id %>">
+      </div>
+
+      <div>
+        <label for="course_id_box">
+          Course
+        </label>
+
+        <input type="text" id="course_id_box" name="query_course_id" value="<%= @the_courselist.course_id %>">
+      </div>
+
+      <button>
+        Update courselist
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
