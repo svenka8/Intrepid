@@ -12,8 +12,9 @@
       <%Course.all.order({:course_name=> :asc}).each do |crse|%>
       <option value="<%=crse.id%>">
         <%=crse.url%>
-        <%end%>
+ 
       </option>
+      <%end%>
       </select>
         <%# <input type="text" id="movie_id_box" name="query_movie_id"> %>
       </div>
