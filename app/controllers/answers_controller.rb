@@ -3,7 +3,11 @@ class AnswersController < ApplicationController
     render({ :template => "answers/landing.html.erb" })
   end
 
-  
+  def create_cookie
+    
+  end
+
+
   
   def index
     matching_answers = Answer.all

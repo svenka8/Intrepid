@@ -124,5 +124,6 @@ Rails.application.routes.draw do
   get("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
              
   #------------------------------
-
+#### Submit
+post("/submit", { :controller => "answers", :action => "create_cookie" })
 end
