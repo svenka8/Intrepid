@@ -5,35 +5,38 @@
 <h2>Where are you in the analytical process?</h2>
 
 
+
+
+    <form action="/submit" method="post">
+      <%# <div>
+        <label for="user_id_box">
+          User
+        </label> %>
+
+        <%# <input type="hidden" id="user_id_box" name="query_user_id" value="<%=@current_user.id%>
+      </div>
+
       <div>
         <label for="movie_id_box">
           Selection 1
         </label>
-      <select id="movie_id_box" name="query_movie_id">
-      <%Answer.all.order({:status=> :asc}).each do |crse|%>
-      <option value="<%=crse.id%>">
-     <%=crse.status%>
-       </option>
-      <%end%>
-      </select>
-
-  <select name="city[country_id]" id="city_country_id">
-  
+      <select id="movie_id_box" name="selection test">
     <option value="1"> I'm being proactive, nobody has tasked me with an analysis yet. </option>
     <option value="2"> I've just received a tasking. </option>
     <option value="3"> I've collected some data.  </option>
     <option value="4"> I'm figuring out my claim.  </option>
     <option value="5"> I'm drafting my assessment.  </option>
 
-</select>
+      </select>
+     
+      </div>
 
-        <%# <input type="text" id="movie_id_box" name="query_movie_id"> %>
+      <button>
+        Submit
+      </button>
+    </form>
 
-
-
-        #######
-
-    <form action="/submit" method="post">
+        <form action="/submit" method="post">
       <%# <div>
         <label for="user_id_box">
           User

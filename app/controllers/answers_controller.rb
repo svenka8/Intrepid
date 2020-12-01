@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
   end
 
   def create_cookie
-    
+    render({ :template => "answers/landing2.html.erb" })
   end
 
 
