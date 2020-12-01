@@ -1,5 +1,7 @@
 class AnswersController < ApplicationController
   def landing
+    # @x=Answer.where(:user_id=@current_user.id).at(0)
+    # @name=@x.tasking
     render({ :template => "answers/landing.html.erb" })
   end
 

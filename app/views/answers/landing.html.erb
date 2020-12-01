@@ -4,7 +4,7 @@
 
 <h2>Where are you in the analytical process?</h2>
 
-
+<%=@name%>
 
 
     <form action="/submit" method="post">
@@ -26,43 +26,16 @@
     <option value="3"> I've collected some data.  </option>
     <option value="4"> I'm figuring out my claim.  </option>
     <option value="5"> I'm drafting my assessment.  </option>
-
       </select>
-     
-      </div>
-
+           </div>
       <button>
         Submit
       </button>
     </form>
-
         <form action="/submit" method="post">
-      <%# <div>
-        <label for="user_id_box">
-          User
-        </label> %>
-
-        <%# <input type="hidden" id="user_id_box" name="query_user_id" value="<%=@current_user.id%>
       </div>
 
-      <div>
-        <label for="movie_id_box">
-          Selection 1
-        </label>
-      <select id="movie_id_box" name="selection test">
-    <option value="1"> I'm being proactive, nobody has tasked me with an analysis yet. </option>
-    <option value="2"> I've just received a tasking. </option>
-    <option value="3"> I've collected some data.  </option>
-    <option value="4"> I'm figuring out my claim.  </option>
-    <option value="5"> I'm drafting my assessment.  </option>
-
-      </select>
-     
-      </div>
-
-      <button>
-        Submit
-      </button>
+ 
     </form>
       </div>
 
