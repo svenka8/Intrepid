@@ -12,13 +12,32 @@
         <label for="movie_id_box">
           Selection 2
         </label>
+        
+       
       <select id="movie_id_box" name="selection 2">
+      <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
+      <%else%>
         <option value="proactive"> I'm being proactive, nobody has tasked me with an analysis yet. </option>
+        <%end%>
+      <%if Answer.where({:user_id=>@current_user.id}).where(:tasking=>true).exists? %>
+      <%else%>
         <option value="tasking"> I've just received a tasking. </option>
+      <%end%>
+      <%if Answer.where({:user_id=>@current_user.id}).where(:collection=>true).exists? %>
+      <%else%>
         <option value="collection"> I've collected some data.  </option>
+      <%end%>
+      <%if Answer.where({:user_id=>@current_user.id}).where(:claim=>true).exists? %>
+      <%else%>
         <option value="claim"> I'm figuring out my claim.  </option>
+      <%end%>
+      <%if Answer.where({:user_id=>@current_user.id}).where(:assessment=>true).exists? %>
+      <%else%>
         <option value="assessment"> I'm drafting my assessment.  </option>
+      <%end%>
       </select>
+
+      
            </div>
       <button>
         Submit
