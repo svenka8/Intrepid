@@ -16,6 +16,7 @@
 class User < ApplicationRecord
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :presence => true
+  validates :experience, :presence => true
   has_secure_password
 #direct associations
   has_many(:grouplists, { :class_name => "Grouplist", :foreign_key => "user_id", :dependent => :destroy })

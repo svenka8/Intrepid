@@ -3,12 +3,13 @@ class AnswersController < ApplicationController
     # @x=Answer.where(:user_id=@current_user.id).at(0)
     # @name=@x.tasking
     render({ :template => "answers/landing.html.erb" })
-    @c=Hash.new
-    @c.store(:proactive, "I'm being proactive, nobody has tasked me with an analysis yet. ")
-    @c.store(:tasking, " I've just received a tasking. ")
-    @c.store(:collection, " I've collected some data. ")
-    @c.store(:claim, " I'm figuring out my claim. ")
-    @c.store(:assessment, " I'm drafting my assessment.  ")
+    
+    # @c=Hash.new
+    # @c.store(:proactive, "I'm being proactive, nobody has tasked me with an analysis yet. ")
+    # @c.store(:tasking, " I've just received a tasking. ")
+    # @c.store(:collection, " I've collected some data. ")
+    # @c.store(:claim, " I'm figuring out my claim. ")
+    # @c.store(:assessment, " I'm drafting my assessment.  ")
   end
 
   def selection1
