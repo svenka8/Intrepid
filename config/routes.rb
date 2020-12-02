@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 # landing page
   get("/", { :controller => "answers", :action => "landing" })
+  
 
   # Routes for the Answer resource:
 
