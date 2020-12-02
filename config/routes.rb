@@ -125,5 +125,9 @@ Rails.application.routes.draw do
              
   #------------------------------
 #### Submit
-post("/submit", { :controller => "answers", :action => "selection" })
+post("/submit1", { :controller => "answers", :action => "selection1" })
+post("/submit2", { :controller => "answers", :action => "selection2" })
+post("/submit3", { :controller => "answers", :action => "selection3" })
+post("/submit4", { :controller => "answers", :action => "selection4" })
+post("/submit5", { :controller => "answers", :action => "selection5" })
 end

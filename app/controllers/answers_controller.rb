@@ -11,9 +11,10 @@ class AnswersController < ApplicationController
     @c.store(:assessment, " I'm drafting my assessment.  ")
   end
 
-  def selection
+  def selection1
     selection_1=params.fetch("selection 1")
-    @xy=selection_1
+    @sel1=selection_1
+    cookies.store(:selection1, @sel1)
     the_selection=Answer.new
     id=@current_user.id
     the_selection.user_id=id
@@ -43,8 +44,138 @@ the_selection.save
     render({ :template => "answers/landing2.html.erb" })
   end
 
+  def selection2
+    selection_2=params.fetch("selection 2")
+    @sel2=selection_2
+    cookies.store(:selection2, @sel2)
+    the_selection=Answer.new
+    id=@current_user.id
+    the_selection.user_id=id
 
-  
+    if selection_2=="proactive"
+        the_selection.proactive="true"
+        # the_selection.save
+    end
+    if selection_2=="tasking"
+        the_selection.tasking="true"
+        # the_selection.save
+    end
+    if selection_2=="collection"
+        the_selection.collection="true"
+        # the_selection.save
+    end
+    if selection_2=="claim"
+        the_selection.claim="true"
+        
+      end
+    if selection_2=="assessment"
+      the_selection.assessment="true"
+      # the_selection.save
+    end
+the_selection.save
+    
+    render({ :template => "answers/landing3.html.erb" })
+  end
+
+  def selection3
+    selection_3=params.fetch("selection 3")
+    @sel3=selection_3
+    cookies.store(:selection3, @sel3)
+    the_selection=Answer.new
+    id=@current_user.id
+    the_selection.user_id=id
+
+    if selection_3=="proactive"
+        the_selection.proactive="true"
+        # the_selection.save
+    end
+    if selection_3=="tasking"
+        the_selection.tasking="true"
+        # the_selection.save
+    end
+    if selection_3=="collection"
+        the_selection.collection="true"
+        # the_selection.save
+    end
+    if selection_3=="claim"
+        the_selection.claim="true"
+        
+      end
+    if selection_3=="assessment"
+      the_selection.assessment="true"
+      # the_selection.save
+    end
+the_selection.save
+    
+    render({ :template => "answers/landing4.html.erb" })
+  end
+
+    def selection4
+    selection_4=params.fetch("selection 4")
+    @sel4=selection_4
+    cookies.store(:selection4, @sel4)
+    the_selection=Answer.new
+    id=@current_user.id
+    the_selection.user_id=id
+
+    if selection_4=="proactive"
+        the_selection.proactive="true"
+        # the_selection.save
+    end
+    if selection_4=="tasking"
+        the_selection.tasking="true"
+        # the_selection.save
+    end
+    if selection_4=="collection"
+        the_selection.collection="true"
+        # the_selection.save
+    end
+    if selection_4=="claim"
+        the_selection.claim="true"
+        
+      end
+    if selection_4=="assessment"
+      the_selection.assessment="true"
+      # the_selection.save
+    end
+the_selection.save
+    
+    render({ :template => "answers/landing5.html.erb" })
+  end
+
+
+      def selection5
+    selection_5=params.fetch("selection 5")
+    @sel5=selection_5
+    cookies.store(:selection5, @sel5)
+    the_selection=Answer.new
+    id=@current_user.id
+    the_selection.user_id=id
+
+    if selection_5=="proactive"
+        the_selection.proactive="true"
+        # the_selection.save
+    end
+    if selection_5=="tasking"
+        the_selection.tasking="true"
+        # the_selection.save
+    end
+    if selection_5=="collection"
+        the_selection.collection="true"
+        # the_selection.save
+    end
+    if selection_5=="claim"
+        the_selection.claim="true"
+        
+      end
+    if selection_5=="assessment"
+      the_selection.assessment="true"
+      # the_selection.save
+    end
+the_selection.save
+    
+    render({ :template => "answers/summary.html.erb" })
+  end
   def index
     matching_answers = Answer.all
 
