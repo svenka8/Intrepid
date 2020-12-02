@@ -125,5 +125,5 @@ Rails.application.routes.draw do
              
   #------------------------------
 #### Submit
-post("/submit", { :controller => "answers", :action => "create_cookie" })
+post("/submit", { :controller => "answers", :action => "selection" })
 end

@@ -3,9 +3,43 @@ class AnswersController < ApplicationController
     # @x=Answer.where(:user_id=@current_user.id).at(0)
     # @name=@x.tasking
     render({ :template => "answers/landing.html.erb" })
+    @c=Hash.new
+    @c.store(:proactive, "I'm being proactive, nobody has tasked me with an analysis yet. ")
+    @c.store(:tasking, " I've just received a tasking. ")
+    @c.store(:collection, " I've collected some data. ")
+    @c.store(:claim, " I'm figuring out my claim. ")
+    @c.store(:assessment, " I'm drafting my assessment.  ")
   end
 
-  def create_cookie
+  def selection
+    selection_1=params.fetch("selection 1")
+    @xy=selection_1
+    the_selection=Answer.new
+    id=@current_user.id
+    the_selection.user_id=id
+
+    if selection_1=="proactive"
+        the_selection.proactive="true"
+        # the_selection.save
+    end
+    if selection_1=="tasking"
+        the_selection.tasking="true"
+        # the_selection.save
+    end
+    if selection_1=="collection"
+        the_selection.collection="true"
+        # the_selection.save
+    end
+    if selection_1=="claim"
+        the_selection.claim="true"
+        
+      end
+    if selection_1=="assessment"
+      the_selection.assessment="true"
+      # the_selection.save
+    end
+the_selection.save
+    
     render({ :template => "answers/landing2.html.erb" })
   end
 
@@ -68,9 +102,7 @@ class AnswersController < ApplicationController
   def destroy
     the_id = params.fetch("path_id")
     the_answer = Answer.where({ :id => the_id }).at(0)
-
     the_answer.destroy
-
     redirect_to("/answers", { :notice => "Answer deleted successfully."} )
   end
 end
