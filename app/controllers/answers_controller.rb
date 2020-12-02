@@ -41,8 +41,10 @@ class AnswersController < ApplicationController
       # the_selection.save
     end
 the_selection.save
+p the_selection.errors.full_messages
+@error1=the_selection.errors.full_messages
     
-    render({ :template => "answers/landing2.html.erb" })
+    render({ :template => "answers/landing2.html.erb", :alert => "error1"} )
   end
 
   def selection2
@@ -74,6 +76,7 @@ the_selection.save
       # the_selection.save
     end
 the_selection.save
+p the_selection.errors.full_messages
     
     render({ :template => "answers/landing3.html.erb" })
   end
@@ -107,6 +110,7 @@ the_selection.save
       # the_selection.save
     end
 the_selection.save
+p the_selection.errors.full_messages
     
     render({ :template => "answers/landing4.html.erb" })
   end
@@ -140,7 +144,7 @@ the_selection.save
       # the_selection.save
     end
 the_selection.save
-    
+  p the_selection.errors.full_messages
     render({ :template => "answers/landing5.html.erb" })
   end
 
@@ -174,7 +178,7 @@ the_selection.save
       # the_selection.save
     end
 the_selection.save
-    
+    p the_selection.errors.full_messages
     render({ :template => "answers/summary.html.erb" })
   end
   def index
