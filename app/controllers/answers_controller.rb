@@ -98,6 +98,7 @@ p the_selection.errors.full_messages
 
   def selection3
     selection_3=params.fetch("selection 3")
+      #  selection_2=params.fetch("selection 2")
     @sel3=selection_3
     cookies.store(:selection3, @sel3)
     the_selection=Answer.new
