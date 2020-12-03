@@ -165,37 +165,53 @@ the_selection.save
   end
 
 
-      def selection5
+  def selection5
     selection_5=params.fetch("selection 5")
     @sel5=selection_5
     cookies.store(:selection5, @sel5)
     the_selection=Answer.new
     id=@current_user.id
     the_selection.user_id=id
+    # the_selection=User.where(:id=>@current_user.id).inspect
+    # id=@current_user.id
+    # the_selection.user_id=id
 
-    if selection_5=="proactive"
+    if selection_5=="experienced"
         the_selection.proactive="true"
         # the_selection.save
     end
-    if selection_5=="tasking"
+    if selection_5=="inexperienced"
         the_selection.tasking="true"
         # the_selection.save
     end
-    if selection_5=="collection"
-        the_selection.collection="true"
+ 
+  the_selection.save
+    p the_selection.errors.full_messages
+    render({ :template => "answers/experience.html.erb" })
+  end
+   def selection6
+    selection_6=params.fetch("selection 6")
+    @sel5=selection_6
+    cookies.store(:selection6, @sel6)
+    the_selection=Answer.new
+    id=@current_user.id
+    the_selection.user_id=id
+    # the_selection=User.where(:id=>@current_user.id).inspect
+    # id=@current_user.id
+    # the_selection.user_id=id
+
+    if selection_6=="workingalong"
+        the_selection.proactive="true"
         # the_selection.save
     end
-    if selection_5=="claim"
-        the_selection.claim="true"
-        
-      end
-    if selection_5=="assessment"
-      the_selection.assessment="true"
-      # the_selection.save
+    if selection_6=="inagroup"
+        the_selection.tasking="true"
+        # the_selection.save
     end
-the_selection.save
+ 
+  the_selection.save
     p the_selection.errors.full_messages
-    render({ :template => "answers/summary.html.erb" })
+    render({ :template => "answers/user-groups.html.erb" })
   end
   def index
     matching_answers = Answer.all

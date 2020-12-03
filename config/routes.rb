@@ -131,4 +131,6 @@ post("/submit2", { :controller => "answers", :action => "selection2" })
 post("/submit3", { :controller => "answers", :action => "selection3" })
 post("/submit4", { :controller => "answers", :action => "selection4" })
 post("/submit5", { :controller => "answers", :action => "selection5" })
+post("/submit6", { :controller => "answers", :action => "selection6" })
+post("/submit7", { :controller => "answers", :action => "selection7" })
 end
