@@ -6,6 +6,7 @@
 #  assessment :boolean
 #  claim      :boolean
 #  collection :boolean
+#  exp        :boolean
 #  proactive  :boolean
 #  status     :string
 #  tasking    :boolean
