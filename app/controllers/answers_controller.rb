@@ -177,11 +177,11 @@ the_selection.save
     # the_selection.user_id=id
 
     if selection_5=="experienced"
-        the_selection.proactive="true"
+        the_selection.exp="true"
         # the_selection.save
     end
     if selection_5=="inexperienced"
-        the_selection.tasking="true"
+        the_selection.exp="false"
         # the_selection.save
     end
  
@@ -200,7 +200,7 @@ the_selection.save
     # id=@current_user.id
     # the_selection.user_id=id
 
-    if selection_6=="workingalong"
+    if selection_6=="workingalone"
         the_selection.proactive="true"
         # the_selection.save
     end
