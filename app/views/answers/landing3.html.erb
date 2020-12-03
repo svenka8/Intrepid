@@ -13,6 +13,7 @@
         </label>
       <select id="movie_id_box" name="selection 3">
       <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
+      
       <%else%>
         <option value="proactive"> I'm being proactive, nobody has tasked me with an analysis yet. </option>
         <%end%>
