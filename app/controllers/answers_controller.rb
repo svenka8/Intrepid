@@ -2,8 +2,12 @@ class AnswersController < ApplicationController
   def landing
     # x=@current_user.id
     # y=Answer.where({:user_id=>4}).at(0)
+    if @current_user ==nil
+          # redirect_to("/", { :notice => "You have to sign in first." })
+    else
     Answer.where({:user_id=>@current_user.id}).each do |task|
       task.destroy
+    end
     end
     # @name=@x.tasking
     render({ :template => "answers/landing.html.erb" })
@@ -16,6 +20,7 @@ class AnswersController < ApplicationController
     # @c.store(:claim, " I'm figuring out my claim. ")
     # @c.store(:assessment, " I'm drafting my assessment.  ")
   end
+
 def clear_selection
       Answer.where({:user_id=>@current_user.id}).each do |task|
       task.destroy
