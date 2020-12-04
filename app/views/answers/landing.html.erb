@@ -7,8 +7,12 @@
 
     <form action="/submit1" method="post">
       <div>
-        <label for="user_id_box">
-          <%=User.where(:id=>@current_user.id).at(0).first_name%>
+        <label for="user_id_box"> 
+        <%if @current_user==nil%> #if you attempt to use this without signing in, you'll get an error.
+        Booyah2
+        <% else %>
+          <%=User.where(:id=>@current_user.id).at(0).first_name%> 
+          <% end %>
         </label> 
 
         <%# <input type="hidden" id="user_id_box" name="query_user_id" value="<%=@current_user.id%>

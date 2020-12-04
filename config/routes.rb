@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 # landing page
-  get("/", { :controller => "answers", :action => "landing" })
-  
+  # get("/", { :controller => "answers", :action => "landing" })
+  get("/", { :controller => "answers", :action => "signin" })
 
   # Routes for the Answer resource:
 

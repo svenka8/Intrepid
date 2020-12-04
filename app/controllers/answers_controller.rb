@@ -1,4 +1,18 @@
 class AnswersController < ApplicationController
+  
+  def signin
+    if @current_user ==nil
+      redirect_to("/user_sign_in", { :alert => "You must sign up or sign in to proceed." })
+    else
+        
+          Answer.where({:user_id=>@current_user.id}).each do |task|
+          task.destroy
+  
+          end
+          render({ :template => "answers/landing.html.erb" })
+    end
+      
+  end
   def landing
 
     if @current_user ==nil
