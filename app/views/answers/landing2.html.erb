@@ -13,26 +13,20 @@
            <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? || Answer.where({:user_id=>@current_user.id}).where(:tasking=>true).exists? %>
             Great!.. Now just tell us about your experience in this area of research.
           <% else %>
-            Great!.. Now just tell us about your experience in this area of research.
+            Okay!.. Are you working alone? or in a group?
           <% end %>
         </label>
         
       <select id="movie_id_box" name="selection 2">
-          <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
+          <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? || Answer.where({:user_id=>@current_user.id}).where(:tasking=>true).exists? %>
             <option value="experience"> Yes!.. I've previous experience in this area!</option>
             <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
           <% #elsif %>
-         <%elsif Answer.where({:user_id=>@current_user.id}).where(:tasking=>true).exists? %>
-            <option value="experience"> Yes!.. I've previous experience in this area!</option>
-            <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
+         <%elsif %>
+            <option value="group"> Yes!.. I'm working in a group!</option>
+            <option value="solo"> I'm a lone wolf!</option>
         <% end %>
-         <%if Answer.where({:user_id=>@current_user.id}).where(:claim=>true).exists? || Answer.where({:user_id=>@current_user.id}).where(:assessment=>true).exists?||Answer.where({:user_id=>@current_user.id}).where(:collection=>true).exists?%>
-           <option value="experience"> Yes!.. I've previous experience in this area!</option>
-           <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
-        <%else%>
-           <option value="experience"> Yes!.. I've previous experience in this area!</option>
-            <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
-        <% end %>
+ 
       
       </select>
 

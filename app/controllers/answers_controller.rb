@@ -76,30 +76,30 @@ p the_selection.errors.full_messages
     id=@current_user.id
     the_selection.user_id=id
 
-    if selection_2=="proactive"
-        the_selection.proactive="true"
+    if selection_2=="experience"
+        #the_selection.proactive="true"
+        render({ :template => "courses/summary1.html.erb" })
         # the_selection.save
     end
-    if selection_2=="tasking"
-        the_selection.tasking="true"
+    if selection_2=="inexperienced"
+        #the_selection.tasking="true"
+        render({ :template => "courses/summary1.html.erb" })
         # the_selection.save
     end
-    if selection_2=="collection"
-        the_selection.collection="true"
+    if selection_2=="group"
+        #the_selection.collection="true"
+        render({ :template => "courses/summary2.html.erb" })
         # the_selection.save
     end
-    if selection_2=="claim"
-        the_selection.claim="true"
-        
+    if selection_2=="solo"
+        #the_selection.claim="true"
+        render({ :template => "courses/summary1.html.erb" })
       end
-    if selection_2=="assessment"
-      the_selection.assessment="true"
-      # the_selection.save
-    end
-the_selection.save
-p the_selection.errors.full_messages
+
+#the_selection.save
+#p the_selection.errors.full_messages
     
-    render({ :template => "answers/landing3.html.erb" })
+    #render({ :template => "answers/landing3.html.erb" })
   end
 
   def selection3
