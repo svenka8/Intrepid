@@ -23,6 +23,10 @@ class GroupsController < ApplicationController
 
     if the_group.valid?
       the_group.save
+      group_list=Grouplist.new
+      group_list.group_id=the_group.id
+      group_list.user_id=@current_user.id
+      group_list.save
       redirect_to("/groups", { :notice => "Group created successfully." })
     else
       redirect_to("/groups", { :notice => "Group failed to create successfully." })
