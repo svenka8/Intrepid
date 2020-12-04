@@ -10,10 +10,10 @@
 
       <div>
         <label for="movie_id_box">
-           <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
+           <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? || Answer.where({:user_id=>@current_user.id}).where(:tasking=>true).exists? %>
             Great!.. Now just tell us about your experience in this area of research.
           <% else %>
-            Alright - make your second selection!
+            Great!.. Now just tell us about your experience in this area of research.
           <% end %>
         </label>
         
@@ -21,39 +21,27 @@
           <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
             <option value="experience"> Yes!.. I've previous experience in this area!</option>
             <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
-          <% else %>
-      <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
- 
-
-
-      <%else%>
-        <option value="proactive"> I'm being proactive, nobody has tasked me with an analysis yet. </option>
-        <%end%>
-      <%if Answer.where({:user_id=>@current_user.id}).where(:tasking=>true).exists? %>
-      <%else%>
-        <option value="tasking"> I've just received a tasking. </option>
-      <%end%>
-      <%if Answer.where({:user_id=>@current_user.id}).where(:collection=>true).exists? %>
-      <%else%>
-        <option value="collection"> I've collected some data.  </option>
-      <%end%>
-      <%if Answer.where({:user_id=>@current_user.id}).where(:claim=>true).exists? %>
-      <%else%>
-        <option value="claim"> I'm figuring out my claim.  </option>
-      <%end%>
-      <%if Answer.where({:user_id=>@current_user.id}).where(:assessment=>true).exists? %>
-      <%else%>
-        <option value="assessment"> I'm drafting my assessment.  </option>
-      <%end%>
-         <% end %>
+          <% #elsif %>
+         <%elsif Answer.where({:user_id=>@current_user.id}).where(:tasking=>true).exists? %>
+            <option value="experience"> Yes!.. I've previous experience in this area!</option>
+            <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
+        <% end %>
+         <%if Answer.where({:user_id=>@current_user.id}).where(:claim=>true).exists? || Answer.where({:user_id=>@current_user.id}).where(:assessment=>true).exists?||Answer.where({:user_id=>@current_user.id}).where(:collection=>true).exists?%>
+           <option value="experience"> Yes!.. I've previous experience in this area!</option>
+           <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
+        <%else%>
+           <option value="experience"> Yes!.. I've previous experience in this area!</option>
+            <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
+        <% end %>
+      
       </select>
 
       
-           </div>
+      </div>
       <button>
         Submit
       </button>
-    </form>
+  </form>
         <form action="/submit2" method="post">
       </div>
 
