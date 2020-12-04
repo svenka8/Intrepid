@@ -16,4 +16,7 @@ class Group < ApplicationRecord
   has_many(:users, { :through => :grouplists, :source => :user })
 
   
+  
 end
+
+
