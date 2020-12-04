@@ -10,18 +10,18 @@
 
       <div>
         <label for="movie_id_box">
-         <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
-            Experience Level
-            <% else %>
-          Selection 2
+           <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
+            Great!.. Now just tell us about your experience in this area of research.
+          <% else %>
+            Alright - make your second selection!
           <% end %>
         </label>
         
       <select id="movie_id_box" name="selection 2">
-                 <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
-            <option value="experience"> booyah</option>
-            <option value="inexperienced"> booyah</option>
-            <% else %>
+          <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
+            <option value="experience"> Yes!.. I've previous experience in this area!</option>
+            <option value="inexperienced"> Welp!.. I am not really experienced in this area, HALP!</option>
+          <% else %>
       <%if Answer.where({:user_id=>@current_user.id}).where(:proactive=>true).exists? %>
  
 

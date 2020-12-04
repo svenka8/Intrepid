@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
     end
       
   end
-  def landing
+  def landing #unused and moved to signin
 
     if @current_user ==nil
      
@@ -27,7 +27,7 @@ class AnswersController < ApplicationController
     
   end
 
-def clear_selection
+def clear_selection #unused and moved under the delete all rows for user under the root /
       Answer.where({:user_id=>@current_user.id}).each do |task|
       task.destroy
     end
